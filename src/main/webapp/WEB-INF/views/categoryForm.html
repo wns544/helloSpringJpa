@@ -5,6 +5,9 @@
     <title>카테고리 폼</title>
 </head>
 <body>
+<header>
+    <p th:text="${'실습 수행 일시 : ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (E) a HH:mm:ss | 학번 : 1971293 | 이름 : 장원준')}"></p>
+</header>
 <!-- categoryForm.html : th:object + th:field + th:errors 패턴 -->
 <form th:action="@{/categories/create}" th:object="${categoryForm}" method="post">
   <!-- th:field가 name, id, value를 자동 설정 -->

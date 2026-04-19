@@ -30,6 +30,9 @@
     </style>
 </head>
 <body>
+<header>
+    <p th:text="${'실습 수행 일시 : ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (E) a HH:mm:ss | 학번 : 1971293 | 이름 : 장원준')}"></p>
+</header>
 
     <div class="error-icon">⚠️</div>
 
