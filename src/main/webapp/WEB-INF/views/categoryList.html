@@ -8,6 +8,7 @@
     <header>
         <p th:text="${'실습 수행 일시 : ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (E) a HH:mm:ss | 학번 : 1971293 | 이름 : 장원준')}"></p>
     </header>
+    <h1>카테고리 목록</h1>
     <!-- categoryList.html : 성공/오류 Flash 메시지 표시 -->
     <p th:if="${successMessage}" th:text="${successMessage}"></p>
     <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
