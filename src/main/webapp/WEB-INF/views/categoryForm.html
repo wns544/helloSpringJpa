@@ -16,5 +16,11 @@
   <span th:errors="*{name}" style="color:red"></span>
   <button type="submit">등록</button>
 
+</form>
+
+<form th:action="@{/categories}" method="get">
+    <button type="submit">목록으로 돌아가기</button>
+</form>
+
 </body>
 </html>
