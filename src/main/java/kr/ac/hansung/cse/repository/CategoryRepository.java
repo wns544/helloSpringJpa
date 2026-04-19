@@ -30,12 +30,12 @@ public class CategoryRepository {
 
     // 이름으로 카테고리 조회 (폼에서 선택한 카테고리명 → Category 엔티티 변환 시 사용)
     public Optional<Category> findByName(String name) {
-        List<Category> result = em.createQuery(
+        List<Category> r = em.createQuery(
                         "SELECT c FROM Category c WHERE c.name = :name", Category.class)
-                .setParameter("name", name)
-                .getResultList();
-        return result.isEmpty() ? Optional.empty() : Optional.of(result.get(0));
+                .setParameter("name", name).getResultList();
+        return r.isEmpty() ? Optional.empty() : Optional.of(r.get(0));
     }
+
 
     // JOIN FETCH: N+1 문제 방지 (Category + Products 한 번에 로드)
     public Optional<Category> findByIdWithProducts(Long id) {

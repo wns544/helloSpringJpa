@@ -5,6 +5,7 @@ import kr.ac.hansung.cse.exception.DuplicateCategoryException;
 import kr.ac.hansung.cse.model.CategoryForm;
 import kr.ac.hansung.cse.service.CategoryService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -13,6 +14,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/categories")
 public class CategoryController {
     private final CategoryService categoryService;
+
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     @GetMapping // GET /categories → 목록
     public String listCategories(Model model) {
