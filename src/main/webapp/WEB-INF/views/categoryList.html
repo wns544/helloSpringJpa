@@ -11,6 +11,9 @@
     <!-- categoryList.html : 성공/오류 Flash 메시지 표시 -->
     <p th:if="${successMessage}" th:text="${successMessage}"></p>
     <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+    <form th:action="@{/categories/create}" method="get">
+        <button type="submit">카테고리 등록</button>
+    </form>
     <!-- th:each로 목록 반복, 삭제는 POST 폼으로 처리 -->
     <tr th:each="cat : ${categories}">
         <td th:text="${cat.id}"></td>
